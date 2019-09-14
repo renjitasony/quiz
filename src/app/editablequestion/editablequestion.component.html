@@ -1,0 +1,26 @@
+<ng-template [ngIf]="editMode" [ngIfElse]="viewMode">
+    <div>
+        <app-newquestion (cancelEdit)="cancelEdit($event)" mode='edit/{{editQuestion._id}}'></app-newquestion>
+    </div>
+  </ng-template>
+  
+  <ng-template #viewMode>
+      <div class="row">
+          <div class="col-md-9 col-sm-10 text-left">
+                <p>Q{{index+1}}.{{editQuestion.question}}</p>
+                <img src="https://maverick9008.herokuapp.com/view/{{editQuestion.qimage}}" alt="question" *ngIf='hasImage'>
+                <div>
+                    <div>A.{{editQuestion.op1}}</div>
+                    <div>B.{{editQuestion.op2}}</div>
+                    <div>C.{{editQuestion.op3}}</div>
+                </div>
+          </div>
+          <div class="col-md-3 col-sm-2 text-center">
+                <p style="color: blueviolet;">{{editQuestion.category}}</p>
+                <div>
+                    <a (click)="switchMode(true)">Edit</a>
+                    <a (click)='deleteQuestion(editQuestion._id)'>Delete</a>
+                </div>
+          </div>
+      </div>    
+  </ng-template>

@@ -22,8 +22,12 @@
     "@angular/platform-browser": "~8.2.3",
     "@angular/platform-browser-dynamic": "~8.2.3",
     "@angular/router": "~8.2.3",
+    "@types/jquery": "^3.3.31",
+    "bootstrap": "^4.3.1",
     "express": "^4.17.1",
+    "jquery": "^3.4.1",
     "path": "^0.12.7",
+    "popper.js": "^1.15.0",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
     "typescript": "~3.5.3",
@@ -58,5 +62,13 @@
   "main": "karma.conf.js",
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/renjitasony/quiz.git"
+  },
+  "bugs": {
+    "url": "https://github.com/renjitasony/quiz/issues"
+  },
+  "homepage": "https://github.com/renjitasony/quiz#readme"
 }

@@ -1,0 +1,23 @@
+<p>questionnaire works!</p>
+<button type="button" class="btn btn-dark" (click)='openModal()' data-toggle="modal" data-target="#addModal">Add</button>
+<!-- <a data-toggle="modal" href="#addModal"></a> -->
+
+<div class="modal fade"  id="addModal" tabindex="-1" role="dialog" aria-labelledby="addModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="editModalLabel">Add new question</h5>
+              <button type="button" #closeModal class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <app-newquestion mode='add' (notifyAdd)="loadQuestionnaire($event)" (closeModal)="closeAddModal()"></app-newquestion>
+            </div>                     
+          </div>
+        </div>
+</div>  
+<div>
+  <app-editablequestion *ngFor='let question of questionnaire; let i = index;' (notifyDeletion)="loadQuestionnaire($event)" 
+  [editQuestion]='question' [index]='i'></app-editablequestion>
+</div>

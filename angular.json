@@ -24,9 +24,23 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css",                           
+              "src/assets/vendor/fontawesome-free/css/all.min.css",
+              "src/assets/vendor/magnific-popup/magnific-popup.css",
+              "src/assets/css/creative.min.css",         
               "src/styles.css"
+                  
             ],
-            "scripts": []
+            "scripts": [
+              "./node_modules/jquery/dist/jquery.min.js",
+              "./node_modules/bootstrap/dist/js/bootstrap.min.js",                         
+              "src/assets/vendor/jquery/jquery.min.js",
+              "src/assets/vendor/bootstrap/js/bootstrap.bundle.min.js",
+              "src/assets/vendor/jquery-easing/jquery.easing.min.js",
+              "src/assets/vendor/magnific-popup/jquery.magnific-popup.min.js",
+              "src/assets/js/creative.js",
+              "src/assets/js/creative.min.js"              
+            ]
           },
           "configurations": {
             "production": {
@@ -89,9 +103,22 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css",                     
+              "src/assets/vendor/fontawesome-free/css/all.min.css",
+              "src/assets/vendor/magnific-popup/magnific-popup.css",
+              "src/assets/css/creative.min.css",             
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "./node_modules/bootstrap/dist/js/bootstrap.min.js",              
+              "src/assets/vendor/jquery/jquery.min.js",
+              "src/assets/vendor/bootstrap/js/bootstrap.bundle.min.js",
+              "src/assets/vendor/jquery-easing/jquery.easing.min.js",
+              "src/assets/vendor/magnific-popup/jquery.magnific-popup.min.js",
+              "src/assets/js/creative.js",
+              "src/assets/js/creative.min.js"                             
+            ]
           }
         },
         "lint": {

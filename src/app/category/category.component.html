@@ -1,0 +1,29 @@
+
+
+  <a class="portfolio-box" [routerLink]="goto">
+    <img class="img-fluid" src="assets/img/science.png" alt="">
+    <div class="portfolio-box-caption">
+      <ng-container
+        *ngIf="isAdmin; then edit; else display">
+      </ng-container>
+      <ng-template #edit>
+          <div class="project-name">
+              {{category}}
+            </div>
+          <i class="far fa-edit" style="font-size: 48px;"></i>
+      </ng-template>
+      <ng-template #display>
+          <div class="project-category text-white-50">
+              Category
+            </div>
+            <div class="project-name">
+              {{category}}
+            </div>
+      </ng-template>      
+    </div>
+  </a>
+  
+          
+<!--         
+          https://blackrockdigital.github.io/startbootstrap-creative/img/portfolio/thumbnails/1.jpg
+          https://blackrockdigital.github.io/startbootstrap-creative/img/portfolio/fullsize/2.jpg -->
