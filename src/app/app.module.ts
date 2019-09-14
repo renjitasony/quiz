@@ -12,10 +12,14 @@ import { QuestionComponent } from './question/question.component';
 import {QuestionService} from './question.service';
 import { QuestionnaireComponent } from './questionnaire/questionnaire.component';
 import { NewquestionComponent } from './newquestion/newquestion.component';
-import { EditablequestionComponent } from './editablequestion/editablequestion.component'
+import { EditablequestionComponent } from './editablequestion/editablequestion.component';
+import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component'
 
 const approutes:Routes=[
+                        {path:"login",component:LoginComponent},
                         {path:"",component:DemoComponent},
+                        {path:"signup",component:SignupComponent},
                         {path:"question/:idlist",component:QuestionComponent,runGuardsAndResolvers:"pathParamsChange"},
                         {path:"questionnaire/:category",component:QuestionnaireComponent}
                         
@@ -29,7 +33,9 @@ const approutes:Routes=[
     QuestionComponent,
     QuestionnaireComponent,
     NewquestionComponent,
-    EditablequestionComponent
+    EditablequestionComponent,
+    LoginComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,

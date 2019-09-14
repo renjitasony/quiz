@@ -5,6 +5,7 @@ export class Question {
     public category:string;
     public difficulty:string;
     public qimage:string;
+    public answer:string;
     public setQuestion(question){
         this.qid = question._id;
         this.qquestion = question.question;
@@ -14,5 +15,6 @@ export class Question {
         this.category = question.category;
         this.difficulty = question.difficulty;
         this.qimage = question.qimage;
+        this.answer = question.answer;
     }
 }
