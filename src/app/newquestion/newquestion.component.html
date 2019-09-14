@@ -2,7 +2,9 @@
     <!--Material textarea-->
     <div class="form-group pink-textarea active-pink-textarea">
       <label for="question" class="col-form-label">Question:</label>
-      <textarea id="question" name="question" class="md-textarea form-control" rows="3" [(ngModel)]='question.qquestion'></textarea>                  
+      <textarea id="question" name="question" class="md-textarea form-control" rows="3"
+       [(ngModel)]='question.qquestion' #qustn="ngModel" required></textarea> 
+       <small class="text-danger" [class.d-none]="(qustn.valid || qustn.untouched)">Question is required</small>                     
     </div>                
     <div class="custom-control custom-checkbox">
         <input type="checkbox" (change)="toggleUpload()" class="custom-control-input" id="defaultUnchecked">
@@ -14,11 +16,14 @@
     </div>
     <div class="form-group" *ngFor='let opt of (question.opt); let i = index;trackBy:trackByFunction;'>
       <label for="optn{{i+1}}" class="col-form-label">Option {{i+1}}:</label>
-      <input type="text" class="form-control" [(ngModel)] ="question.opt[i]" id="optn{{i+1}}" name="optn{{i+1}}">
+      <input type="text" class="form-control" [(ngModel)] ="question.opt[i]"
+      #option="ngModel" id="optn{{i+1}}" name="optn{{i+1}}" required>
+      <small class="text-danger" [class.d-none]="(option.valid || option.untouched)">Please fill out all the options</small>                     
     </div>
     <div class="form-group">
       <label for="category" class="col-form-label">Category:</label>
-      <select name="category"[(ngModel)]="question.category" id="category" class="custom-select">
+      <select name="category"[(ngModel)]="question.category" #category="ngModel"
+       id="category" class="custom-select" required>
         <option value=""></option>
         <option id="0" value="Science">Science</option>
         <option id="1" value="Politics">Politics</option>
@@ -26,17 +31,20 @@
         <option id="3" value="Arts & Culture">Arts & Culture</option>
         <option id="4" value="Sports">Sports</option>
         <option id="5" value="World">World</option>
-      </select>                  
+      </select> 
+      <small class="text-danger" [class.d-none]="(category.valid || category.untouched)">Category is required</small>                 
     </div>
     <div class="form-group">
       <label for="difficulty" class="col-form-label">Difficulty Level:</label>                                               
-      <select name="difficulty" [(ngModel)]="question.difficulty" id="difficulty" class="custom-select">
+      <select name="difficulty" [(ngModel)]="question.difficulty" #difficulty="ngModel"
+       id="difficulty" class="custom-select" required>
         <option value=""></option>
         <option id="0" value="easy">Easy</option>
         <option id="1" value="medium">Medium</option>
         <option id="2" value="hard">Hard</option>
-      </select>                  
+      </select> 
+      <small class="text-danger" [class.d-none]="(difficulty.valid || difficulty.untouched)">Please enter the difficulty level!</small>                 
     </div>
-    <button type="submit" class="btn btn-primary">{{buttonField}}</button>
+    <button type="submit" class="btn btn-primary" [disabled]="qform.form.invalid">{{buttonField}}</button>
     <button type="button" class="btn btn-primary" *ngIf='editMode' (click)='cancelEditing();'>Cancel</button>
   </form>
