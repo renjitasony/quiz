@@ -11,13 +11,20 @@ export class EditablequestionComponent implements OnInit {
   @Input() public index;
   @Output() notifyDeletion = new EventEmitter();
   editMode:boolean;
-  hasImage:boolean;
+  imageUrl:string;
   constructor(private qservice:QuestionService) {     
   }
 
   ngOnInit() {
     this.editMode = false;
-    this.hasImage = (this.editQuestion.qimage && (this.editQuestion.qimage != ""));
+    var hasImage = (this.editQuestion.qimage && (this.editQuestion.qimage != ""));
+    if(hasImage){
+      this.imageUrl = "https://maverick9008.herokuapp.com/view/"+this.editQuestion.qimage;
+    }else{
+      this.imageUrl = "assets/img/category/quiz-for-teachers-1-728.jpg"
+    }
+    console.log(this.imageUrl);
+
   }
   public switchMode(mode){
     this.editMode = mode;

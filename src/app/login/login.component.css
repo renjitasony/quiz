@@ -1,0 +1,10 @@
+#blogin{
+    margin: 5%;
+    padding:10%;
+    border:1px solid cornflowerblue;
+    background-color:darksalmon;    
+}
+#loginform{    
+    padding: 5%;
+    background-color:darksalmon;
+}

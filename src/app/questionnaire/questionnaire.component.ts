@@ -11,21 +11,25 @@ import { FormArray } from '@angular/forms';
 export class QuestionnaireComponent implements OnInit {
   @ViewChild('closeModal',{static:false}) closeModal:ElementRef;
   questionnaire;
-  modalDisplay:string;
+  categoryFilter="All";
+  textFilter="";
+  difficultyFilter = "";
   
   constructor(private qservice:QuestionService) { }
 
   ngOnInit() {
-    this.loadQuestionnaire("oninit");
+    this.loadQuestionnaire();
   }    
-  public openModal(){
-    this.modalDisplay='block';
-  }
   public closeAddModal(){
     this.closeModal.nativeElement.click();
   }
-  public loadQuestionnaire(event){
-    this.qservice.getQuestionnaire().subscribe((data)=>{
+  public loadQuestionnaire(){
+    var filters = {
+      category:this.categoryFilter,
+      search:this.textFilter,
+      difficulty:this.difficultyFilter
+    }
+    this.qservice.getQuestionnaire(filters).subscribe((data)=>{
       this.questionnaire = data;
     });
   }

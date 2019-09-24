@@ -1,4 +1,58 @@
-<p>question works!</p>
-<h4>Q1.First question</h4>
-<p>{{mindex}}</p>
-<button (click)='nextQuestion()'>Next</button>
+
+<!-- <button (click)='nextQuestion("wrong")'>Next</button> -->
+
+<section class="recent_update_area section_gap">
+    <div class="container">
+        <div class="recent_update_inner">
+            <div class="row">
+                <div class="col-2"></div>
+                <div class="col-8"><app-quizprogress [qnarray]='qarray'></app-quizprogress></div>
+                <div class="col-2"></div>
+            </div>
+                
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">
+                        Score {{score}}
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link danger" id="profile-tab" data-toggle="tab" routerLink = "/home/choice" role="tab" aria-controls="profile"
+                     aria-selected="false">
+                     Exit
+                    </a>
+                </li>
+                <li class="nav-item">
+                    
+                     <!-- Timer:{{qtimer}} -->
+                     <span class="dot">{{qtimer}}</span>
+                </li>
+            </ul>
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                    <div class="row recent_update_text">
+                        <div class="col-lg-6">
+                            <div class="chart_img">
+                                <!-- <img class="img-fluid" src="assets/img/recent_up.png" alt=""> -->
+                                <img class="img-fluid" style="opacity: 0.5; border-radius: 25px;" src="{{imageUrl}}" alt="">
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="section_content">                               
+                                <h6>Q{{qindex}}</h6>
+                                <h1>{{question.question}}</h1>
+                                <ul class="nav nav-tabs" style="display: flow-root">
+                                    <li class="nav-item"><a class="nav-link qoptions" [ngClass]='applyStatus[0]' (click)=onClick(0) id="qoptions">{{question.op1}}</a></li>
+                                    <li class="nav-item"><a class="nav-link qoptions" [ngClass]='applyStatus[1]' (click)=onClick(1) id="qoptions">{{question.op2}}</a></li>
+                                    <li class="nav-item"><a class="nav-link qoptions" [ngClass]='applyStatus[2]' (click)=onClick(2) id="qoptions">{{question.op3}}</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+

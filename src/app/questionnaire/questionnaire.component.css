@@ -50,3 +50,59 @@
   .active-amber-textarea-2.md-form textarea.md-textarea:focus:not([readonly])+label {
     color: #ffa000;
   }
+  .questionnaire-container{
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyWKNFbXRD1dSoGW_N8xPIoobmhGWt_UnrwU8szqpA-qfn-kNZ);
+    /* background-repeat: no-repeat; */
+    background-size: 100% 100%;
+    z-index: -10;
+  }
+  .editable{
+    
+    padding-block: 10px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    margin-left: 15%;
+    margin-right: 15%;
+    width: 70%;
+    align-content: center;
+  }
+  .modal-content{
+    background: rgba(15, 1, 48, 0.6);
+  }
+  #diffilter{
+    line-height: 0.9;
+  }
+  #catfilter{
+    padding-top: 1%;
+    padding-bottom: 1%;
+  }
+  .sbtn {
+    display: inline-block;
+    /* background: -webkit-linear-gradient(to right, #3fcaff 0%, #a4ffb0 51%, #3fcaff 100%);
+    background: -moz-linear-gradient(to right, #3fcaff 0%, #a4ffb0 51%, #3fcaff 100%);
+    background: -ms-linear-gradient(to right, #3fcaff 0%, #a4ffb0 51%, #3fcaff 100%);
+    background: -o-linear-gradient(to right, #3fcaff 0%, #a4ffb0 51%, #3fcaff 100%);
+    background: linear-gradient(to right, #3fcaff 0%, #a4ffb0 51%, #3fcaff 100%); */
+    background: #f48fb1;
+    background-size: 200% auto;
+    padding: 0px 35px;
+    color: #222222;
+    letter-spacing: 1px;
+    font-family: "Roboto", sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 50px;
+    border-radius: 5px;
+    outline: none !important;
+    box-shadow: 0px 10px 30px rgba(163, 255, 177, 0.2);
+    text-align: center;
+    cursor: pointer;
+    -webkit-transition: all 0.4s ease 0s;
+    -moz-transition: all 0.4s ease 0s;
+    -o-transition: all 0.4s ease 0s;
+    transition: all 0.4s ease 0s;
+    text-transform: uppercase; }
+    .sbtn:hover {
+      background-position: right center;
+      color: #22195e; }
+  

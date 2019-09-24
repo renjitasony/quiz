@@ -1,22 +1,77 @@
-<button type="button" class="btn btn-dark" (click)='openModal()' data-toggle="modal" data-target="#addModal">Add</button>
-<!-- <a data-toggle="modal" href="#addModal"></a> -->
-
-<div class="modal fade"  id="addModal" tabindex="-1" role="dialog" aria-labelledby="addModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="editModalLabel">Add new question</h5>
-              <button type="button" #closeModal class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
+<section class="newsletter_area">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6 col-md-6 col-sm-12">
+					<div class="newsletter_inner">
+						<h1>CURIOSITY</h1>
+            <div class="newsletter_widget">
+                <button type="button" class="btn primary_btn sbtn" data-toggle="modal" data-target="#addModal">New question</button>
+                <div class="modal fade"  id="addModal" tabindex="-1" role="dialog" aria-labelledby="addModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="editModalLabel">Add new question</h5>
+                          <button type="button" #closeModal class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                          <app-newquestion mode='add' (notifyAdd)="loadQuestionnaire()" (closeModal)="closeAddModal()"></app-newquestion>
+                        </div>                     
+                      </div>
+                    </div>
+                 </div>
+                 <div class="input-group d-flex flex-row">
+                    <label for="catfilter" class="col-form-label">Category:</label>
+                    <select id="catfilter" [(ngModel)]="categoryFilter" (change)="loadQuestionnaire()" class="form-control">
+                        <option value="All">All</option>
+                        <option id="0" value="Science">Science</option>
+                        <option id="1" value="Politics">Politics</option>
+                        <option id="2" value="General Knowledge">General Knowledge</option>
+                        <option id="3" value="Arts & Culture">Arts & Culture</option>
+                        <option id="4" value="Sports">Sports</option>
+                        <option id="5" value="World">World</option>
+                      </select>                  
+               </div>  
             </div>
-            <div class="modal-body">
-              <app-newquestion mode='add' (notifyAdd)="loadQuestionnaire($event)" (closeModal)="closeAddModal()"></app-newquestion>
-            </div>                     
-          </div>
-        </div>
-</div>  
-<div>
-  <app-editablequestion *ngFor='let question of questionnaire; let i = index;' (notifyDeletion)="loadQuestionnaire($event)" 
-  [editQuestion]='question' [index]='i'></app-editablequestion>
-</div>
+            
+					</div>
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-12">
+					<aside class="newsletter_widget">
+						<div id="mc_embed_signup">
+							<form target="_blank" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
+							 method="get" class="subscribe_form relative">
+                <div class="input-group d-flex flex-row">
+                     <input type="text" class="form-control" (keyup)="loadQuestionnaire()" placeholder="Search" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your email address'"
+                      [(ngModel)] ="textFilter" name="textFilter" id="textFilter">
+                    <!-- <button class="btn primary_btn">Search</button> -->
+                  </div>
+                  
+              </form>
+             <div class="input-group d-flex flex-row" style="padding: 2%;">
+                <label for="diffilter" class="col-form-label">Difficulty:</label>
+                <select id="diffilter" [(ngModel)]="difficultyFilter" (change)="loadQuestionnaire()"  class="custom-select">
+                    <option value=""></option>
+                    <option id="0" value="easy">Easy</option>
+                    <option id="1" value="medium">Medium</option>
+                    <option id="2" value="hard">Hard</option>
+                </select>                  
+           </div>
+						</div>
+					</aside>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--================ End Newsletter Area ================-->
+
+
+
+<section class="about_us_area section_gap_top">
+  <div class="container">
+    <app-editablequestion *ngFor='let question of questionnaire; let i = index;' (notifyDeletion)="loadQuestionnaire()" 
+    [editQuestion]='question' [index]='i'></app-editablequestion>
+  </div>
+  
+</section>

@@ -1,26 +1,30 @@
 <ng-template [ngIf]="editMode" [ngIfElse]="viewMode">
-    <div>
+    <div class="editmode" style="background: rgba(20, 2, 61, 0.8);">
         <app-newquestion (cancelEdit)="cancelEdit($event)" mode='edit/{{editQuestion._id}}'></app-newquestion>
     </div>
-  </ng-template>
+</ng-template>
   
   <ng-template #viewMode>
-      <div class="row">
-          <div class="col-md-9 col-sm-10 text-left">
-                <p>Q{{index+1}}.{{editQuestion.question}}</p>
-                <img src="https://maverick9008.herokuapp.com/view/{{editQuestion.qimage}}" alt="question" *ngIf='hasImage'>
-                <div>
-                    <div>A.{{editQuestion.op1}}</div>
-                    <div>B.{{editQuestion.op2}}</div>
-                    <div>C.{{editQuestion.op3}}</div>
+        <div class="row about_content align-items-center">
+                <div class="col-lg-6">
+                    <div class="section_content recent_update_inner">
+                        <h6>Q{{index+1}}.</h6>
+                        <h1>{{editQuestion.question}}</h1>
+                        <ul class="nav nav-tabs" style="display: flow-root">
+                          <li class="nav-item"><p class="qoptions" [class.text-success]='editQuestion.answer == 0'>{{editQuestion.op1}}</p></li>
+                          <li class="nav-item"><p class="qoptions" [class.text-success]='editQuestion.answer == 1'>{{editQuestion.op2}}</p></li>
+                          <li class="nav-item"><p class="qoptions" [class.text-success]='editQuestion.answer == 2'>{{editQuestion.op3}}</p></li>
+                        </ul>
+                    </div>
+                    <ul class="nav nav-tabs">
+                            <li class="nav-item"><a class="primary_btn" (click)="switchMode(true)" style="margin: 10px;">Edit</a></li>
+                            <li class="nav-item"><a class="primary_btn" (click)='deleteQuestion(editQuestion._id)' style="margin: 10px;">Delete</a></li>
+                          </ul>
                 </div>
-          </div>
-          <div class="col-md-3 col-sm-2 text-center">
-                <p style="color: blueviolet;">{{editQuestion.category}}</p>
-                <div>
-                    <a (click)="switchMode(true)">Edit</a>
-                    <a (click)='deleteQuestion(editQuestion._id)'>Delete</a>
+                <div class="col-lg-6">
+                  <div class="about_us_image_box justify-content-center">
+                    <img class="img-fluid w-75" src="{{imageUrl}}" alt="">
+                  </div>
                 </div>
-          </div>
-      </div>    
+              </div>
   </ng-template>

@@ -1,0 +1,38 @@
+<section class="about_us_area section_gap_top">
+        <div class="container">
+          <div class="row about_content align-items-center">
+            <div class="col-lg-6">
+              <div class="section_content">
+                <h6><a routerLink="/home/choice"><i class="arrow left"></i>Back</a></h6>
+                <h1>Before you begin!</h1>
+                <ng-template [ngIf]="category == 'misc'" [ngIfElse]="categorywise">
+                        <ul style="list-style-type: square; padding-block: inherit;">
+                                <li><h6>You will get 90 seconds of time</h6></li>
+                                <li><h6>Answer as many questions as you can!</h6></li>
+                                <li><h6>Maximum number of questions will be limited to 25</h6></li>
+                        </ul> 
+                </ng-template>                        
+                <ng-template #categorywise>
+                    <ul style="list-style-type: square; padding-block: inherit;">
+                            <li><h6>You can choose favourite quiz category!</h6></li>
+                            <li><h6>You will get 10 seconds of time for each question</h6></li>
+                            <li><h6>Question will get locked after 10 seconds!</h6></li>
+                            <li><h6>Total number of questions is 10</h6></li>
+                    </ul>
+                </ng-template>
+                <div style="margin: 10px; padding-top: 20px;">
+                     <a class="primary_btn" [routerLink]="routeTo">Start Quiz</a>
+                </div>
+                
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="about_us_image_box justify-content-center">
+                  <img class="img-fluid w-75" style="opacity: 0.5; border-radius: 25px;" src="assets/img/category/quiz-for-teachers-1-728.jpg" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      

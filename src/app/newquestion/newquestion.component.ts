@@ -59,7 +59,9 @@ export class NewquestionComponent implements OnInit {
     if(this.editMode){
       this.qservice.updateQuestion(this.question,this.questionId).subscribe(()=>{
         if(this.needsUpload){
-          this.qservice.uploadImage(formData,this.questionId).subscribe();
+          this.qservice.uploadImage(formData,this.questionId).subscribe(()=>{
+            this.cancelEdit.emit("updated/"+this.questionId);
+          });
         }
         this.cancelEdit.emit("updated/"+this.questionId);
         qform.reset();        
@@ -72,7 +74,9 @@ export class NewquestionComponent implements OnInit {
         if(this.needsUpload)
         {
           console.log(result.qid);
-          this.qservice.uploadImage(formData,result.qid).subscribe();
+          this.qservice.uploadImage(formData,result.qid).subscribe(()=>{
+            this.notifyAdd.emit("addition");     
+          });
         }
         this.closeModal.emit("close");
         qform.reset();

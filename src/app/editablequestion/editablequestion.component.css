@@ -1,0 +1,51 @@
+.row{
+    margin-bottom: 5%;
+  }
+/* .row{
+    width: 90%;
+    padding: 5%;
+    margin: 5%;
+    background-color:darkgray;
+    z-index:9999;
+    -webkit-box-shadow: 7px 7px 2px 0px rgba(50, 50, 50, 0.75);
+    -moz-box-shadow: 7px 7px 2px 0px rgba(50, 50, 50, 0.75);
+    box-shadow: 7px 7px 2px 0px rgba(50, 50, 50, 0.75);
+} */
+.editmode{
+    padding: 5%;
+    margin: 5%;
+    width: 70%;
+}
+a.nav-link {
+    border-image: none;
+    width: 250%;
+   
+}
+.genric-btn{
+    font-size: 1.0em;
+}
+.qoptions {
+    position: relative;
+    padding: 0px;
+    border: 0px;
+    border-radius: 0;
+    text-align: center;
+    height: 50px;
+    width: 250%;
+    line-height: 50px;
+    font-size: 18px;
+    font-family: "Rajdhani", sans-serif;
+    font-weight: 600;
+    color: #fff;
+    border: 2px solid transparent;
+    border-image: -webkit-linear-gradient(90deg, #3fcaff, #a4ffb0);
+    border-image: -moz-linear-gradient(90deg, #3fcaff, #a4ffb0);
+    border-image: -o-linear-gradient(90deg, #3fcaff, #a4ffb0);
+    border-image: linear-gradient(90deg, #3fcaff, #a4ffb0);
+    border-image-slice: 1;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    background-color: transparent;
+    transition: all 0.3s ease-in-out;
+    display: block;
+ }
