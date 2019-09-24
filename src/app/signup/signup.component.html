@@ -40,8 +40,8 @@
                     #pwd="ngModel" name="pwd" placeholder="Password" required>
                     <small class="text-danger" [class.d-none]="(pwd.untouched || pwd.valid)" >Password is mandatory</small>
                     <label for="pwd">Confirm password</label>
-                    <input type="password" class="form-control" id="confirmpwd"
-                    name="confirmpwd" placeholder="Password">
+                    <input type="password" class="form-control" id="cpwd"[(ngModel)]="cpwd"
+                    #confirmpwd="ngModel" name="cpwd" placeholder="Password">
                     <small class="text-danger" [class.d-none]="(confirmpwd.untouched || (confirmpwd.value == pwd.value))">Passwords should match</small>
                   </div>            
                   <button type="submit" [disabled]="rform.form.invalid || (!(confirmpwd.value == pwd.value))" class="btn btn-primary" name="register">Register</button>
