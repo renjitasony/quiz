@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from '@angular/router';
+import { UserService } from '../user.service';
+import {AuthService} from '../auth.service'
 
 @Component({
   selector: 'app-header',
@@ -7,10 +10,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   uname:string;
-  constructor() { }
+  constructor(private router:Router,
+              private userService:UserService,
+              private authService:AuthService
+    ) { }
 
   ngOnInit() {
     this.uname =  localStorage.getItem("uname");
   }
-
+  public clearSessionData(){
+    localStorage.clear();
+    this.router.navigateByUrl("/");
+  }
 }

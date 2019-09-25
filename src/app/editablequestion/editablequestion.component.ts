@@ -23,8 +23,6 @@ export class EditablequestionComponent implements OnInit {
     }else{
       this.imageUrl = "assets/img/category/quiz-for-teachers-1-728.jpg"
     }
-    console.log(this.imageUrl);
-
   }
   public switchMode(mode){
     this.editMode = mode;

@@ -6,7 +6,7 @@ import {HttpClient} from '@angular/common/http'
   providedIn: 'root'
 })
 export class UserService {
-
+  
   constructor(private httpClient:HttpClient) { }
   public addUser(user:User){
     let url ='https://maverick9008.herokuapp.com/user/add';

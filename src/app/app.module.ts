@@ -5,10 +5,12 @@ import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http'
 
 import { AppComponent } from './app.component';
-import { DemoComponent } from './demo/demo.component';
 import { QuestionComponent } from './question/question.component';
 
 import {QuestionService} from './question.service';
+import {UserService} from './user.service';
+import {AuthService} from './auth.service';
+import {AuthGuard} from './auth.guard';
 import { QuestionnaireComponent } from './questionnaire/questionnaire.component';
 import { NewquestionComponent } from './newquestion/newquestion.component';
 import { EditablequestionComponent } from './editablequestion/editablequestion.component';
@@ -22,12 +24,13 @@ import { RulesComponent } from './rules/rules.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { ScoreComponent } from './score/score.component';
 import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component'
+import { FooterComponent } from './footer/footer.component';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component'
 
 const approutes:Routes=[
                         {path:"",component:LoginComponent},
-                        {path:"demo",component:DemoComponent},
                         {path:"home",component:QuizComponent,
+                        canActivate:[AuthGuard],canActivateChild:[AuthGuard],
                         children:[
                           {path:"",component:HomeComponent},
                           {path:"choice",component:QuizchoiceComponent},
@@ -37,15 +40,15 @@ const approutes:Routes=[
                           {path:"score/:score",component:ScoreComponent}
                         ]},
                         {path:"signup",component:SignupComponent},
-                        {path:"question/:category",component:QuestionComponent,runGuardsAndResolvers:"pathParamsChange"},
-                        {path:"questionnaire/:category",component:QuestionnaireComponent}
+                        {path:"question/:category",component:QuestionComponent,
+                        runGuardsAndResolvers:"pathParamsChange",canActivate:[AuthGuard]},
+                        {path:"**",component:PagenotfoundComponent}
                         
 ]
 
 @NgModule({
   declarations: [
     AppComponent,
-    DemoComponent,
     QuestionComponent,
     QuestionnaireComponent,
     NewquestionComponent,
@@ -60,7 +63,8 @@ const approutes:Routes=[
     CategoriesComponent,
     ScoreComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    PagenotfoundComponent
   ],
   imports: [
     BrowserModule,
@@ -69,7 +73,9 @@ const approutes:Routes=[
     HttpClientModule
   ],
   providers: [
-    QuestionService
+    QuestionService,
+    UserService,
+    AuthService
   ],
   bootstrap: [AppComponent]
 })
