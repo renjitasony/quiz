@@ -20,7 +20,7 @@ export class SignupComponent implements OnInit {
   }
   public onSubmit(){
     this.userService.addUser(this.user).subscribe(()=>{
-      this.router.navigateByUrl("/login");
+      this.router.navigateByUrl("/");
     });
   }
 }
