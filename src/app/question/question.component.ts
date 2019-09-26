@@ -47,6 +47,7 @@ export class QuestionComponent implements OnInit {
   }
 public nextQuestion(status){
   this.applyStatus = ["","",""];
+  $('.qoptions').blur();
   if(status == 'right'){
     this.score += 10;    
   }
