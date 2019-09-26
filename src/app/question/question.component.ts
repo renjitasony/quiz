@@ -112,6 +112,9 @@ public startQuizTime(){
     }else{
       this.qtimer--;
       clearInterval(this.timeInterval);
+      if(this.totalNo == 25){
+        this.router.navigateByUrl("/home/score/"+this.score);
+      }
       this.nextQuestion("wrong");
     }    
   },1000);
