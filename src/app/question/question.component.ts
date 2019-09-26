@@ -49,19 +49,15 @@ public nextQuestion(status){
   this.applyStatus = ["","",""];
   $('.qoptions').blur();
   this.qarray[(this.qindex-1)] = status;
-  if(this.questionSet.length >0){
+  if(this.questionSet.length == 0){
+    this.finishQuiz();
+  }
     this.question = this.questionSet.pop();
     this.loadImage();
     if(this.totalNo == 10){
       this.startQuizTime();
     }
     this.qindex++;
-  }else{
-    var totalScore = parseInt(localStorage.getItem("totalScore")); 
-    totalScore += this.score;
-    localStorage.setItem("totalScore",totalScore.toString());
-    this.router.navigateByUrl("/home/score/"+this.score);
-  }
 }
 public checkOption(op){
   if(op == this.question.answer){
@@ -111,7 +107,7 @@ public startQuizTime(){
       this.qtimer--;
       clearInterval(this.timeInterval);
       if(this.totalNo == 25){
-        this.router.navigateByUrl("/home/score/"+this.score);
+        this.finishQuiz();
       }
       this.nextQuestion("wrong");
     }    
@@ -119,5 +115,11 @@ public startQuizTime(){
 }
   getQarray(n:number):any[]{
     return Array(n);
+  }
+  public finishQuiz(){
+    var totalScore = parseInt(localStorage.getItem("totalScore")); 
+    totalScore += this.score;
+    localStorage.setItem("totalScore",totalScore.toString());
+    this.router.navigateByUrl("/home/score/"+this.score);
   }
 }

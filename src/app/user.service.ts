@@ -16,4 +16,8 @@ export class UserService {
     let url ='https://maverick9008.herokuapp.com/user/authenticate';
     return this.httpClient.post(url,user);
   }
+  public storeUserData(id,score){
+    let url = 'https://maverick9008.herokuapp.com/user/storeuserdata/'+id+'/'+score;
+    return this.httpClient.get(url);
+  }
 }

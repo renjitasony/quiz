@@ -19,7 +19,11 @@ export class HeaderComponent implements OnInit {
     this.uname =  localStorage.getItem("uname");
   }
   public clearSessionData(){
-    localStorage.clear();
-    this.router.navigateByUrl("/");
+    let userId = localStorage.getItem("userId");
+    let totalScore = localStorage.getItem("totalScore");
+    this.userService.storeUserData(userId,totalScore).subscribe(()=>{
+      localStorage.clear();
+      this.router.navigateByUrl("/");
+    });
   }
 }
