@@ -5,9 +5,9 @@
     <div class="container">
         <div class="recent_update_inner">
             <div class="row">
-                <div class="col-2"></div>
-                <div class="col-8"><app-quizprogress [qnarray]='qarray'></app-quizprogress></div>
-                <div class="col-2"></div>
+                <div class="col-lg-2 sm-0"></div>
+                <div class="col-lg-8 sm-12"><app-quizprogress [qnarray]='qarray'></app-quizprogress></div>
+                <div class="col-lg-2 sm-0"></div>
             </div>
                 
             <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -34,7 +34,7 @@
                         <div class="col-lg-6">
                             <div class="chart_img">
                                 <!-- <img class="img-fluid" src="assets/img/recent_up.png" alt=""> -->
-                                <img class="img-fluid" style="opacity: 0.5; border-radius: 25px;" src="{{imageUrl}}" alt="">
+                                <img class="img-fluid" style="opacity: 0.5; border-radius: 25px; min-height: 540px;" src="{{imageUrl}}" alt="">
                             </div>
                         </div>
                         <div class="col-lg-6">
@@ -42,9 +42,9 @@
                                 <h6>Q{{qindex}}</h6>
                                 <h1>{{question.question}}</h1>
                                 <ul class="nav nav-tabs" style="display: flow-root">
-                                    <li class="nav-item"><a class="nav-link qoptions" [ngClass]='applyStatus[0]' (click)=onClick(0) id="qoptions">{{question.op1}}</a></li>
-                                    <li class="nav-item"><a class="nav-link qoptions" [ngClass]='applyStatus[1]' (click)=onClick(1) id="qoptions">{{question.op2}}</a></li>
-                                    <li class="nav-item"><a class="nav-link qoptions" [ngClass]='applyStatus[2]' (click)=onClick(2) id="qoptions">{{question.op3}}</a></li>
+                                    <li class="nav-item qoptions"><a class="nav-link qcoptions" [ngClass]='applyStatus[0]' (click)=onClick(0) id="qoptions">{{question.op1}}</a></li>
+                                    <li class="nav-item qoptions"><a class="nav-link qcoptions" [ngClass]='applyStatus[1]' (click)=onClick(1) id="qoptions">{{question.op2}}</a></li>
+                                    <li class="nav-item qoptions"><a class="nav-link qcoptions" [ngClass]='applyStatus[2]' (click)=onClick(2) id="qoptions">{{question.op3}}</a></li>
                                 </ul>
                             </div>
                         </div>
