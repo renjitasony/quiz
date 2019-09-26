@@ -55,7 +55,9 @@ public nextQuestion(status){
   if(this.questionSet.length >0){
     this.question = this.questionSet.pop();
     this.loadImage();
-    this.startQuizTime();
+    if(this.totalNo == 10){
+      this.startQuizTime();
+    }
     this.qindex++;
   }else{
     var totalScore = parseInt(localStorage.getItem("totalScore")); 

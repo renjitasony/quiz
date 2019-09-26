@@ -1,0 +1,9 @@
+<div class="section_content">                               
+    <h6>Q{{qindex}}</h6>
+    <h1>{{question.question}}</h1>
+    <ul class="nav nav-tabs" style="display: flow-root">
+        <li class="nav-item qoptions"><a class="nav-link qcoptions" [ngClass]='applyStatus[0]' (click)=onClick(0) id="qoptions">{{question.op1}}</a></li>
+        <li class="nav-item qoptions"><a class="nav-link qcoptions" [ngClass]='applyStatus[1]' (click)=onClick(1) id="qoptions">{{question.op2}}</a></li>
+        <li class="nav-item qoptions"><a class="nav-link qcoptions" [ngClass]='applyStatus[2]' (click)=onClick(2) id="qoptions">{{question.op3}}</a></li>
+    </ul>
+</div>
