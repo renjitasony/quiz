@@ -48,9 +48,6 @@ export class QuestionComponent implements OnInit {
 public nextQuestion(status){
   this.applyStatus = ["","",""];
   $('.qoptions').blur();
-  if(status == 'right'){
-    this.score += 10;    
-  }
   this.qarray[(this.qindex-1)] = status;
   if(this.questionSet.length >0){
     this.question = this.questionSet.pop();
@@ -78,6 +75,7 @@ public onClick(op:number){
     }
   }  
   if(op == this.question.answer){
+    this.score += 10;
     this.applyStatus[op] = 'rightoption';
     setTimeout(() => {
       this.nextQuestion('right');      
