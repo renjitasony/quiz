@@ -1,7 +1,8 @@
 <div class="container">
-    <h2 style="text-align: center;margin-top: 10%;">Register</h2>
-        <div class="row" id="signup">
-            <div class="col-6">
+    
+        <div class="row">
+            <div class="col-12">
+                <h2>Register</h2>
                 <form #rform="ngForm" (ngSubmit)="onSubmit()">
                   <div class="form-group">
                     <label for="uname">Enter your name</label>
@@ -43,8 +44,10 @@
                     <input type="password" class="form-control" id="cpwd"[(ngModel)]="cpwd"
                     #confirmpwd="ngModel" name="cpwd" placeholder="Password">
                     <small class="text-danger" [class.d-none]="(confirmpwd.untouched || (confirmpwd.value == pwd.value))">Passwords should match</small>
-                  </div>            
-                  <button type="submit" [disabled]="rform.form.invalid || (!(confirmpwd.value == pwd.value))" class="btn btn-primary" name="register">Register</button>
+                  </div> 
+                  <div><button type="submit" [disabled]="rform.form.invalid || (!(confirmpwd.value == pwd.value))" class="btn btn-primary" name="register">Register</button>
+                    <a routerLink="/" class="btn btn-warning">Cancel</a>
+                  </div>                           
                 </form>
             </div>
         </div>            

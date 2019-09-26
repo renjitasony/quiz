@@ -78,7 +78,6 @@ button.ghost {
 form {
 	background-color: #FFFFFF;
 	display: flex;
-	align-items: center;
 	justify-content: center;
 	flex-direction: column;
 	padding: 0 50px;
@@ -254,4 +253,12 @@ footer i {
 footer a {
     color: #3c97bf;
     text-decoration: none;
+}
+label{
+	text-align: right;
+	clear: both;
+	float: left;
+}
+.row{
+	margin-bottom: 10%;
 }
