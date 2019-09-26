@@ -69,9 +69,11 @@ public checkOption(op){
   }
 }
 public onClick(op:number){
-  if(this.applyStatus[op] != ""){
-    return true;
-  }
+  for(var i=0;i<3;i++){
+    if(this.applyStatus[op] != ""){
+      return true;
+    }
+  }  
   if(op == this.question.answer){
     this.applyStatus[op] = 'rightoption';
     setTimeout(() => {
