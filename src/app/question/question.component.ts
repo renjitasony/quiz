@@ -66,11 +66,12 @@ public checkOption(op){
 }
 public onClick(op:number){
   for(var i=0;i<3;i++){
-    if(this.applyStatus[op] != ""){
+    if(this.applyStatus[i] != ""){
       return true;
     }
   }  
   if(op == this.question.answer){
+    console.log("reached right");
     this.score += 10;
     this.applyStatus[op] = 'rightoption';
     setTimeout(() => {
@@ -78,6 +79,7 @@ public onClick(op:number){
     }, 1000);
     
   }else{
+    console.log("reached wrong");
     this.applyStatus[op] = 'wrongoption';
     setTimeout(() => {
       this.nextQuestion('wrong');      

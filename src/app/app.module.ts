@@ -26,7 +26,6 @@ import { ScoreComponent } from './score/score.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
-import { QuestioncontentComponent } from './questioncontent/questioncontent.component'
 
 const approutes:Routes=[
                         {path:"",component:LoginComponent},
@@ -66,7 +65,6 @@ const approutes:Routes=[
     HeaderComponent,
     FooterComponent,
     PagenotfoundComponent,
-    QuestioncontentComponent
   ],
   imports: [
     BrowserModule,
