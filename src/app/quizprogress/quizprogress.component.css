@@ -46,17 +46,6 @@ ul {
     border-color: red;
     color: #fff;
 }
-.pagination>li>a, .pagination>li>span {
-    position: relative;
-    float: left;
-    padding: 6px 12px;
-    margin-left: -1px;
-    line-height: 1.42857143;
-    color: #428bca;
-    text-decoration: none;
-    background-color: #fff;
-    border: 1px solid #ddd;
-}
 a {
     color: #428bca;
     text-decoration: none;
@@ -82,6 +71,8 @@ li.active {
     margin-left: -1px;
     line-height: 1.42857143;
     color: #428bca;
+    font-size: 8px;
+    font-weight: 900;
     text-decoration: none;
     background-color: #fff;
     border: 1px solid #ddd;
