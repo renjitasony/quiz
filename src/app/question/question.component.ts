@@ -35,7 +35,6 @@ export class QuestionComponent implements OnInit {
     }
     this.qservice.getQuiz(this.category,this.totalNo).subscribe((data)=>{
       this.questionSet = data;
-      console.log(this.questionSet.length);
       this.question = this.questionSet.pop();
       this.loadImage();
       if(this.question != null){
@@ -71,7 +70,6 @@ public onClick(op:number){
     }
   }  
   if(op == this.question.answer){
-    console.log("reached right");
     this.score += 10;
     this.applyStatus[op] = 'rightoption';
     setTimeout(() => {
@@ -79,7 +77,6 @@ public onClick(op:number){
     }, 1000);
     
   }else{
-    console.log("reached wrong");
     this.applyStatus[op] = 'wrongoption';
     setTimeout(() => {
       this.nextQuestion('wrong');      
